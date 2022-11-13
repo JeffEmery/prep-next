@@ -4,4 +4,9 @@ node_modules
 /build
 /public/build
 .env
+
+# Local ssl certificate and key
 ssl/**.*
+
+# Using tailwind to build styles
+/app/styles
