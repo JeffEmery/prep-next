@@ -4,7 +4,7 @@ import { authenticator } from '~/services/auth.server'
 
 export const loader: LoaderFunction = () => {
   console.log('/auth/login -> Loader Function')
-  redirect('/')
+  return redirect('/')
 }
 
 export const action: ActionFunction = async ({ request }) => {

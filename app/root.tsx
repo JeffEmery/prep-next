@@ -3,10 +3,10 @@ import {
   Links,
   LiveReload,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
+import Landing from './components/landing'
 
 import styles from './styles/app.css'
 
@@ -28,7 +28,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Landing />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
