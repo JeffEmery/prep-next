@@ -15,11 +15,11 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Outlet } from '@remix-run/react'
 
 const navigation = [
-  { name: 'Dashboard', href: 'dashboard', icon: HomeIcon, current: true },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Documents', href: '#', icon: InboxIcon, current: false },
+  { name: 'Dashboard', href: 'dashboard', icon: HomeIcon, current: false },
+  { name: 'Referral', href: '#', icon: UsersIcon, current: false },
+  { name: 'Orders', href: '#', icon: FolderIcon, current: false },
+  { name: 'Exams', href: '#', icon: CalendarIcon, current: false },
+  { name: 'Authorizations', href: '#', icon: InboxIcon, current: false },
   { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
 ]
 const userNavigation = [
@@ -261,19 +261,13 @@ export default function Landing() {
 
           <main className="flex-1">
             <div className="py-6">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+              <div className="mx-auto text-center max-w-7xl px-4 sm:px-6 md:px-8">
                 <h1 className="text-2xl font-semibold text-gray-900">
-                  Dashboard
+                  Please log in
                 </h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                {/* Replace with your content */}
-                <div className="py-4">
-                  <div className="h-96 rounded-lg border-4 border-dashed border-gray-200">
-                    <Outlet />
-                  </div>
-                </div>
-                {/* /End replace */}
+                <Outlet />
               </div>
             </div>
           </main>
