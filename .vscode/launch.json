@@ -5,18 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Chrome",
-      "request": "launch",
-      "type": "chrome",
-      "url": "https://prep.envision.dev:3000",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
+      // this probably the best way...
+      // todo: figure out how to start the tailwind and remix build/watch before this runs
+      //       because this will only watch for changes to server.js
       "name": "nodemon",
       "type": "node",
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/server.js",
+      "runtimeArgs": ["--require", "dotenv/config"],
+      "args": ["--watch", "./server.js"],
       "smartStep": true,
       "runtimeExecutable": "nodemon",
       "console": "integratedTerminal",
@@ -28,7 +26,7 @@
       "type": "node",
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
-      "runtimeArgs": ["run-script", "debug"],
+      "runtimeArgs": ["run-script", "dev:node"],
       "runtimeExecutable": "npm"
     },
     {
