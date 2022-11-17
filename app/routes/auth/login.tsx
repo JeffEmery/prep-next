@@ -2,12 +2,12 @@ import type { ActionFunction, LoaderFunction } from '@remix-run/node'
 import { redirect } from '@remix-run/node'
 import { authenticator } from '~/services/auth.server'
 
-export const loader: LoaderFunction = () => {
+export const loader: LoaderFunction = async ({ request }) => {
   console.log('/auth/login -> Loader Function')
-  return redirect('/')
+  return redirect('/good')
 }
 
-export const action: ActionFunction = async ({ request }) => {
+export let action: ActionFunction = ({ request }) => {
   console.log('/auth/login -> Action Function')
-  return await authenticator.authenticate('auth0', request)
+  return authenticator.authenticate('auth0', request)
 }
